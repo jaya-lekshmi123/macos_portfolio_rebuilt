@@ -1,0 +1,55 @@
+/* App.css - Global app styles for the modern macOS portfolio */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000; /* Default background if wallpaper doesn't load or for transitions */
+  overflow: hidden; /* Prevent body scrollbars */
+}
+
+.app-container-modern {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Ensure no scrollbars on the main app container */
+}
+
+/* Class to apply to body when FilesAppWindow is open for effects like background dimming/blur */
+body.files-app-active .desktop-background > *:not(.files-app-window-modern):not(.menu-bar-container):not(.dock-container) {
+  /* Example: filter: blur(3px) brightness(0.8); */
+  /* This is a bit tricky to get right without affecting the window itself if it's a child */
+  /* A better approach might be a dedicated overlay div */
+}
+
+.main-content-area-modern {
+  flex-grow: 1; /* Takes up available space next to the sidebar */
+  overflow-y: auto; /* Allows content within the main area to scroll */
+  overflow-x: hidden;
+  height: 100%; /* Ensure it takes full height of its container (FilesAppWindow content area) */
+  display: flex; /* To allow content views to fill it */
+  flex-direction: column; /* Stack header and content within */
+}
+
+/* General content view styling - can be refined per view */
+.content-view-modern {
+  width: 100%;
+  height: 100%; /* Ensure content views try to fill their container */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Common header style for content views */
+.content-view-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.08); /* Subtle separator */
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.content-view-header h2 {
+  font-size: 22px; /* Consistent header size */
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0;
+}
+

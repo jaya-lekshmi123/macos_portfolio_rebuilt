@@ -1,0 +1,57 @@
+/* Desktop.css */
+.desktop-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("../assets/macos-wallpaper.jpg"); /* Modern macOS wallpaper */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column; /* Stack MenuBar, content, Dock vertically */
+}
+
+.desktop-content-area {
+  flex-grow: 1; /* Takes up available space between MenuBar and Dock */
+  position: relative; /* For positioning icons and windows */
+  padding-top: 22px; /* Space for the MenuBar */
+  padding-bottom: 70px; /* Space for the Dock */
+}
+
+.desktop-icon {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px; /* Adjust as needed */
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px; /* Modern rounded corners */
+  transition: background-color 0.2s ease-in-out;
+  text-align: center;
+}
+
+.desktop-icon:hover {
+  background-color: rgba(255, 255, 255, 0.15); /* Subtle hover effect */
+}
+
+.desktop-icon-image {
+  margin-bottom: 6px;
+  /* Lucide icons are SVG, color can be set in the component */
+}
+
+.desktop-icon-label {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 12px; /* Modern macOS font size for icons */
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); /* Softer shadow */
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Ensure assets directory exists and wallpaper is there */
+/* Example: src/assets/macos-wallpaper.jpg */
+

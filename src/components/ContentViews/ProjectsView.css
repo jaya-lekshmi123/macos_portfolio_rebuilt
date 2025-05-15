@@ -1,0 +1,126 @@
+/* ProjectsView.css */
+.content-view-modern.projects-view-modern {
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .content-view-header is already defined in MyFilesView.css, can be global or repeated */
+/* For now, assuming it might be slightly different or we make it global later */
+.projects-view-modern .content-view-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 20px 0;
+}
+
+.projects-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Wider cards for projects */
+  gap: 25px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.project-card-modern {
+  background-color: #ffffff; /* White background for cards */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 0 0 0.5px rgba(0, 0, 0, 0.05);
+  overflow: hidden; /* Clip image corners */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.project-card-modern:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 0 0 0.5px rgba(0, 0, 0, 0.07);
+}
+
+.project-card-image-container {
+  width: 100%;
+  height: 180px; /* Fixed height for image container */
+  background-color: #f0f0f5; /* Placeholder background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the area, might crop */
+}
+
+.project-card-icon-placeholder svg {
+  width: 60px;
+  height: 60px;
+  color: #a0a0a5;
+}
+
+.project-card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allow content to take available space */
+}
+
+.project-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 8px 0;
+}
+
+.project-card-description {
+  font-size: 13px;
+  color: #55555c;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  flex-grow: 1; /* Push tags and links to bottom */
+}
+
+.project-card-tags {
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-tag {
+  background-color: #e8e8ed;
+  color: #5856d6; /* Use a consistent accent or derive from theme */
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 10px; /* Pill shape */
+}
+
+.project-card-links {
+  display: flex;
+  gap: 15px;
+  margin-top: auto; /* Push to bottom of card content */
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #007aff;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.project-link:hover {
+  color: #0056b3;
+}
+
+.project-link svg {
+  margin-bottom: -2px; /* Align icon with text */
+}
+

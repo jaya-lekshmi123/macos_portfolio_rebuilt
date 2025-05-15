@@ -1,0 +1,142 @@
+/* AboutMeView.css */
+.content-view-modern.about-me-view-modern {
+  padding: 25px 30px; /* More padding for a profile-like view */
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: #f9f9f9; /* Slightly different background for this view if desired */
+}
+
+/* .content-view-header is assumed to be global or defined elsewhere */
+.about-me-view-modern .content-view-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 25px 0;
+}
+
+.about-me-content-modern {
+  max-width: 900px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the content */
+}
+
+.about-me-main-info {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  gap: 30px;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e0e0e5;
+}
+
+.profile-image-container {
+  flex-shrink: 0;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Circular profile image */
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.profile-icon-placeholder svg {
+  width: 150px;
+  height: 150px;
+  color: #c0c0c5;
+  border-radius: 50%;
+  background-color: #e8e8ed;
+  padding: 20px; /* Padding inside the circle for the icon */
+  box-sizing: border-box;
+}
+
+.profile-details h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin: 0 0 5px 0;
+}
+
+.profile-details h3 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #55555c;
+  margin: 0 0 15px 0;
+}
+
+.profile-details .bio {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333338;
+  margin-bottom: 20px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-links a {
+  color: #007aff;
+  transition: color 0.15s ease;
+}
+
+.contact-links a:hover {
+  color: #0056b3;
+}
+
+.contact-links svg {
+  width: 22px;
+  height: 22px;
+}
+
+.about-me-section {
+  margin-bottom: 35px;
+}
+
+.about-me-section h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-me-section h4 svg {
+  color: #007aff;
+}
+
+.experience-item, .education-item {
+  margin-bottom: 20px;
+  padding-left: 10px; /* Indent items slightly */
+  border-left: 3px solid #007aff; /* Accent line */
+}
+
+.experience-item h5, .education-item h5 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333338;
+  margin: 0 0 3px 0;
+}
+
+.period, .institution {
+  font-size: 13px;
+  color: #6a6a6e;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+.experience-item p:not(.period) {
+  font-size: 14px;
+  color: #55555c;
+  line-height: 1.5;
+  margin: 0;
+}
+

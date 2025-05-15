@@ -1,0 +1,77 @@
+/* RecentView.css */
+.content-view-modern.recent-view-modern {
+  padding: 15px 20px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* .content-view-header is assumed to be global or defined elsewhere */
+.recent-view-modern .content-view-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 15px 0;
+}
+
+.recent-files-list-modern {
+  width: 100%;
+  font-size: 13px;
+  color: #333338;
+}
+
+.recent-files-list-header-modern {
+  display: flex;
+  padding: 8px 10px;
+  background-color: rgba(242, 242, 247, 0.7);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  font-weight: 500;
+  color: #6a6a6e;
+  user-select: none;
+}
+
+.recent-header-name { flex-basis: 50%; min-width: 250px; }
+.recent-header-accessed { flex-basis: 25%; min-width: 150px; }
+.recent-header-path { flex-basis: 25%; min-width: 150px; }
+
+.recent-file-item-modern {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e8e8ed;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.recent-file-item-modern:hover {
+  background-color: rgba(0, 122, 255, 0.07);
+}
+
+.recent-file-icon-name {
+  flex-basis: 50%;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+}
+
+.recent-file-item-icon {
+  margin-right: 10px;
+  color: #007aff; /* Default icon color */
+}
+
+.recent-file-item-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.recent-file-item-name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recent-file-item-accessed { flex-basis: 25%; min-width: 150px; color: #6a6a6e; }
+.recent-file-item-path { flex-basis: 25%; min-width: 150px; color: #8a8a8e; font-style: italic; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+

@@ -1,0 +1,121 @@
+/* Sidebar.css */
+.sidebar-modern-container {
+  width: 220px; /* Typical modern macOS sidebar width */
+  min-width: 200px;
+  height: 100%;
+  background-color: rgba(242, 242, 247, 0.85); /* Light vibrant material, common in modern sidebars */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-right: 0.5px solid rgba(0, 0, 0, 0.15); /* Subtle separator line */
+  padding: 12px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-y: auto; /* Allow scrolling if content exceeds height */
+}
+
+.sidebar-section {
+  margin-bottom: 15px;
+}
+
+.sidebar-section-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6a6a6e; /* Muted grey for section titles */
+  text-transform: uppercase;
+  padding: 0 16px 6px 16px;
+  letter-spacing: 0.5px;
+  cursor: default;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 16px 6px 14px; /* Slightly more padding on right */
+  margin: 0 8px; /* Horizontal margin for items */
+  border-radius: 6px; /* Rounded corners for selected items */
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+  color: #333333; /* Default item text color */
+}
+
+.sidebar-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-item.active {
+  background-color: rgba(0, 122, 255, 0.9); /* macOS selection blue */
+  color: white;
+  font-weight: 500;
+}
+
+.sidebar-item.active .sidebar-item-icon svg,
+.sidebar-item.active .sidebar-item-label {
+  color: white !important; /* Ensure icon and label are white when active */
+}
+
+.sidebar-item-icon {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  color: #555; /* Default icon color */
+}
+
+.sidebar-item.active .sidebar-item-icon {
+  color: white;
+}
+
+.sidebar-item-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.sidebar-item-label {
+  font-size: 13px;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* For tag color dots if used */
+.tag-color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 4px; /* Adjust spacing if needed */
+}
+
+.tag-color-dot.red { background-color: #ff6b61; }
+.tag-color-dot.orange { background-color: #ff9f40; }
+/* Add more colors as needed */
+
+.sidebar-footer {
+  margin-top: auto; /* Pushes footer to the bottom */
+  padding: 10px 16px;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-footer-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #007aff;
+  font-size: 13px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  text-align: left;
+}
+
+.sidebar-footer-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-footer-button svg {
+  margin-right: 6px;
+}
+

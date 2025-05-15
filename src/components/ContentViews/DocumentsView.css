@@ -1,0 +1,111 @@
+/* DocumentsView.css */
+.content-view-modern.documents-view-modern {
+  padding: 15px 20px; /* Slightly less vertical padding for list views */
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* .content-view-header is assumed to be global or defined elsewhere */
+.documents-view-modern .content-view-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 15px 0;
+}
+
+.documents-list-modern {
+  width: 100%;
+  border-collapse: collapse; /* For a table-like appearance if not using actual table */
+  font-size: 13px;
+  color: #333338;
+}
+
+.documents-list-header-modern {
+  display: flex;
+  padding: 8px 10px;
+  background-color: rgba(242, 242, 247, 0.7); /* Light header for the list */
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  font-weight: 500;
+  color: #6a6a6e;
+  user-select: none;
+}
+
+.doc-header-name { flex-basis: 45%; min-width: 200px; }
+.doc-header-type { flex-basis: 20%; min-width: 120px; }
+.doc-header-size { flex-basis: 10%; min-width: 80px; text-align: right; padding-right: 10px;}
+.doc-header-modified { flex-basis: 15%; min-width: 120px; text-align: right; padding-right: 10px;}
+.doc-header-actions { flex-basis: 10%; min-width: 80px; text-align: center; }
+
+.document-item-modern {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e8e8ed; /* Separator for items */
+  transition: background-color 0.15s ease-in-out;
+}
+
+.document-item-modern:hover {
+  background-color: rgba(0, 122, 255, 0.07); /* Subtle blue hover, common in lists */
+}
+
+.document-icon-name {
+  flex-basis: 45%;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.document-item-icon {
+  margin-right: 10px;
+  color: #007aff; /* Default icon color */
+}
+
+.document-item-icon svg {
+  width: 20px; /* Smaller icons for list view */
+  height: 20px;
+}
+
+.document-item-name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.document-item-type { flex-basis: 20%; min-width: 120px; color: #6a6a6e; }
+.document-item-size { flex-basis: 10%; min-width: 80px; text-align: right; padding-right: 10px; color: #6a6a6e; }
+.document-item-modified { flex-basis: 15%; min-width: 120px; text-align: right; padding-right: 10px; color: #6a6a6e; }
+
+.document-item-actions {
+  flex-basis: 10%;
+  min-width: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: #007aff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+}
+
+.action-button:hover {
+  background-color: rgba(0, 122, 255, 0.1);
+}
+
+.action-button svg {
+  width: 16px;
+  height: 16px;
+}
+

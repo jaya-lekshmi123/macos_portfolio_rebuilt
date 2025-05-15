@@ -1,0 +1,58 @@
+/* MenuBar.css */
+.menu-bar-container {
+  position: fixed; /* Or absolute if desktop-container is the main viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 22px; /* Standard macOS menu bar height */
+  background-color: rgba(255, 255, 255, 0.3); /* Translucent material effect - adjust as needed */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 13px;
+  color: #333; /* Darker text for better contrast on light/translucent bar */
+  z-index: 1000; /* Ensure it's above other content */
+  box-sizing: border-box;
+}
+
+.menu-bar-left,
+.menu-bar-right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.menu-item {
+  padding: 0 8px;
+  cursor: default; /* Standard menu items are not typically interactive in this context */
+  white-space: nowrap;
+  line-height: 22px; /* Vertically center text */
+}
+
+.menu-item.apple-logo {
+  font-size: 16px; /* Apple logo is usually a bit larger */
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.menu-item.app-name {
+  font-weight: 600; /* Active app name is bold */
+}
+
+.menu-bar-right .menu-item {
+  margin-left: 10px;
+}
+
+.status-icon {
+  font-size: 14px; /* Adjust icon size as needed */
+}
+
+.date-time {
+  letter-spacing: 0.5px;
+}
+

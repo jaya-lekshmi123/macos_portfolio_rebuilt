@@ -1,0 +1,142 @@
+/* MyFilesView.css */
+.content-view-modern.my-files-view {
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-view-header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-view-header h2 {
+  font-size: 24px; /* Larger title for the main content view */
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0;
+}
+
+.files-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* Responsive grid */
+  gap: 25px; /* Spacing between items */
+  flex-grow: 1;
+  overflow-y: auto; /* Allow scrolling of grid content if it overflows */
+}
+
+.file-item-modern {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+  max-width: 150px; /* Ensure items don't get too wide */
+}
+
+.file-item-modern:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.file-icon-modern {
+  width: 80px; /* Container for the icon */
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  position: relative; /* For badges */
+}
+
+.file-icon-modern svg {
+  width: 64px; /* Icon size */
+  height: 64px;
+  color: #007aff; /* Default icon color, can be more specific per type */
+}
+
+/* Specific icon colors if needed */
+.file-item-modern[title*="Photo Albums"] .file-icon-modern svg,
+.file-item-modern[title*="iTunes Files"] .file-icon-modern svg,
+.file-item-modern[title*="Recently Deleted"] .file-icon-modern svg,
+.file-item-modern[title*="Text Documents"] .file-icon-modern svg {
+  color: #007aff; /* Standard folder blue */
+}
+
+.file-item-modern[title*=".jpg"] .file-icon-modern svg,
+.file-item-modern[title*="Game"] .file-icon-modern svg,
+.file-item-modern[title*="Journal"] .file-icon-modern svg,
+.file-item-modern[title*="Pass"] .file-icon-modern svg {
+  color: #34c759; /* Green for images/media, adjust as needed */
+}
+
+.file-item-modern[title*="Report"] .file-icon-modern svg,
+.file-item-modern[title*="Invoice"] .file-icon-modern svg,
+.file-item-modern[title*="Confirmation"] .file-icon-modern svg {
+  color: #5856d6; /* Purple for documents, adjust as needed */
+}
+
+.file-item-modern[title*="Trip"] .file-icon-modern svg {
+  color: #ff9500; /* Orange for videos, adjust as needed */
+}
+
+.file-item-modern[title*="Highlights"] .file-icon-modern svg {
+  color: #ff2d55; /* Pink/Red for music, adjust as needed */
+}
+
+.video-duration-badge, .music-duration-badge {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.file-name-modern {
+  font-size: 12px;
+  color: #1d1d1f;
+  font-weight: 400;
+  margin-bottom: 3px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Keep name on one line */
+}
+
+.item-count-modern, .item-date-modern {
+  font-size: 11px;
+  color: #8a8a8e;
+}
+
+.floating-action-button-modern {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+}
+
+.floating-action-button-modern:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+

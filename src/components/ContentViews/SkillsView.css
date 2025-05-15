@@ -1,0 +1,101 @@
+/* SkillsView.css */
+.content-view-modern.skills-view-modern {
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Allow scrolling for the whole view if content is too long */
+}
+
+/* .content-view-header is assumed to be global or defined elsewhere */
+.skills-view-modern .content-view-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 25px 0;
+}
+
+.skills-content-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive columns for categories */
+  gap: 30px;
+}
+
+.skill-category-modern {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+}
+
+.skill-category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8e8ed;
+}
+
+.skill-category-icon {
+  margin-right: 12px;
+  color: #007aff; /* Accent color for icons */
+}
+
+.skill-category-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.skill-category-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0;
+}
+
+.skills-list-modern {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-item-modern {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.skill-name {
+  color: #333338;
+  flex-basis: 45%; /* Adjust as needed for name length */
+  margin-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.skill-bar-container {
+  flex-grow: 1;
+  height: 8px;
+  background-color: #e8e8ed;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.skill-bar {
+  height: 100%;
+  background-color: #007aff; /* macOS accent blue */
+  border-radius: 4px;
+  transition: width 0.5s ease-in-out;
+}
+
+.skill-level {
+  color: #6a6a6e;
+  font-size: 12px;
+  min-width: 35px; /* Ensure space for 100% */
+  text-align: right;
+}
+

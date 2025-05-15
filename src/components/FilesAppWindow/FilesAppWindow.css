@@ -1,0 +1,103 @@
+/* FilesAppWindow.css */
+.files-app-window-modern {
+  background-color: rgba(248, 248, 248, 0.85); /* Light, slightly translucent background for modern windows */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 12px; /* Modern macOS window corner radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 0 0.5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Important for rounded corners and content clipping */
+}
+
+.files-app-window-modern.maximized {
+  border-radius: 0; /* No rounded corners when maximized */
+  /* Add any other specific maximized styles if needed */
+}
+
+.window-title-bar-modern {
+  height: 38px; /* Modern title bar height */
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  background-color: transparent; /* Title bar often blends with window or has subtle material */
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.08); */ /* Optional subtle separator */
+  flex-shrink: 0; /* Prevent shrinking */
+  user-select: none; /* Prevent text selection in title bar */
+  cursor: default; /* Default cursor for title bar, RND will handle grab */
+}
+
+.window-controls-modern {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Pushes title to the center/right */
+}
+
+.window-control-modern {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  margin-right: 8px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: filter 0.1s ease-in-out;
+}
+
+.window-control-modern svg {
+  display: none; /* Icons are typically shown on hover in modern macOS */
+  color: rgba(0,0,0,0.6);
+}
+
+.window-control-modern:hover svg {
+  display: block;
+}
+
+.window-control-modern.close {
+  background-color: #ff5f57; /* Red */
+}
+.window-control-modern.close:hover {
+  filter: brightness(0.9);
+}
+
+.window-control-modern.minimize {
+  background-color: #ffbd2e; /* Yellow */
+}
+.window-control-modern.minimize:hover {
+  filter: brightness(0.9);
+}
+
+.window-control-modern.maximize {
+  background-color: #28c940; /* Green */
+}
+.window-control-modern.maximize:hover {
+  filter: brightness(0.9);
+}
+
+.window-title-modern {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4f4f4f; /* Slightly muted title color */
+  text-align: center;
+  flex-grow: 1; /* Allow title to take space but controls push it */
+  line-height: 38px; /* Align with title bar height */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 50px; /* Ensure it doesn't overlap controls if centered */
+}
+
+.window-content-modern {
+  flex-grow: 1;
+  overflow-y: auto; /* Allow content to scroll */
+  overflow-x: hidden;
+  background-color: #fdfdfd; /* Slightly off-white for content area, common in Finder */
+  /* padding: 8px; */ /* Add padding if content shouldn't touch edges directly */
+  display: flex; /* To allow sidebar and content view to sit side-by-side */
+}
+
