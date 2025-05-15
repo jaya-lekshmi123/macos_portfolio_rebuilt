@@ -1,74 +1,90 @@
 /* Dock.css */
 .dock-container {
   position: fixed;
-  bottom: 8px; /* Small gap from the bottom edge */
+  bottom: 12px; /* Slightly more gap from bottom edge */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  align-items: flex-end; /* Align items to the bottom of the container */
-  padding: 6px;
-  background-color: rgba(240, 240, 240, 0.4); /* Light, translucent background - modern macOS style */
-  backdrop-filter: blur(25px) saturate(180%);
-  -webkit-backdrop-filter: blur(25px) saturate(180%);
-  border-radius: 20px; /* More pronounced rounded corners for modern dock */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 0.5px rgba(0, 0, 0, 0.1);
-  z-index: 1000; /* Ensure it's above other content but below active windows if necessary */
-  transition: all 0.2s ease-in-out;
+  align-items: flex-end;
+  padding: 6px 10px;
+  background-color: rgba(255, 255, 255, 0.25); /* More transparent for authentic macOS look */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 18px; /* macOS style rounded corners */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), 0 0 0 0.5px rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .dock-container {
+    background-color: rgba(30, 30, 30, 0.25);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 0 0.5px rgba(255, 255, 255, 0.05);
+  }
 }
 
 .dock-background {
   display: flex;
-  align-items: flex-end; /* Icons sit at the bottom of their slots */
-  height: 60px; /* Base height for the dock icons area */
+  align-items: flex-end;
+  height: 60px;
 }
 
 .dock-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Center icon and label */
-  margin: 0 6px;
-  padding: 4px;
+  justify-content: flex-end; /* Align to bottom for better bounce effect */
+  margin: 0 4px;
+  padding: 4px 6px;
   cursor: pointer;
-  transition: transform 0.15s ease-out, margin-bottom 0.15s ease-out;
-  position: relative; /* For the label */
-  color: #1d1d1f; /* Default icon color, can be overridden by SVG fill */
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); /* Springy animation */
+  position: relative;
+  color: #fff; /* White icons for better visibility */
 }
 
 .dock-item svg {
-  width: 48px; /* Control icon size */
+  width: 48px;
   height: 48px;
-  transition: transform 0.15s ease-out;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); /* Icon shadow for depth */
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); /* Match dock-item transition */
 }
 
+/* macOS-style magnification effect */
 .dock-item:hover svg {
-  transform: scale(1.35); /* Magnification effect */
+  transform: translateY(-8px) scale(1.4); /* Lift and scale */
 }
 
-.dock-item:hover {
-  margin-bottom: 10px; /* Lift icon slightly on hover */
+.dock-item:hover + .dock-item svg {
+  transform: translateY(-4px) scale(1.15); /* Affect adjacent icons slightly */
 }
 
+.dock-item:hover + .dock-item + .dock-item svg {
+  transform: translateY(-2px) scale(1.05); /* Subtle effect on second adjacent icon */
+}
+
+/* Label that appears on hover */
 .dock-item-label {
-  display: none; /* Hidden by default, shown on hover */
   position: absolute;
-  bottom: 75px; /* Position above the magnified icon */
-  background-color: rgba(20, 20, 20, 0.85);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  top: -35px; /* Position above the icon */
+  background-color: rgba(50, 50, 50, 0.8);
   color: white;
-  padding: 5px 10px;
-  border-radius: 6px;
+  padding: 4px 10px;
+  border-radius: 5px;
   font-size: 12px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
   white-space: nowrap;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  z-index: 1001; /* Above the dock itself */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none; /* Don't interfere with mouse events */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .dock-item:hover .dock-item-label {
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Separator example (if needed) */

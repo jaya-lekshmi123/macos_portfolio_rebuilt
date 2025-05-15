@@ -1,23 +1,33 @@
 /* MenuBar.css */
 .menu-bar-container {
-  position: fixed; /* Or absolute if desktop-container is the main viewport */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 22px; /* Standard macOS menu bar height */
-  background-color: rgba(255, 255, 255, 0.3); /* Translucent material effect - adjust as needed */
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height: 24px; /* Slightly taller for better visibility */
+  background-color: rgba(255, 255, 255, 0.8); /* More opaque for authentic macOS look */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 0; /* Remove border for cleaner look */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif; /* macOS system fonts */
   font-size: 13px;
-  color: #333; /* Darker text for better contrast on light/translucent bar */
-  z-index: 1000; /* Ensure it's above other content */
+  font-weight: 400;
+  color: #000; /* Darker text for authentic macOS look */
+  z-index: 1000;
   box-sizing: border-box;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .menu-bar-container {
+    background-color: rgba(28, 28, 30, 0.8); /* Dark translucent in dark mode */
+    color: #fff;
+  }
 }
 
 .menu-bar-left,
@@ -28,31 +38,39 @@
 }
 
 .menu-item {
-  padding: 0 8px;
-  cursor: default; /* Standard menu items are not typically interactive in this context */
+  padding: 0 9px;
+  cursor: default;
   white-space: nowrap;
-  line-height: 22px; /* Vertically center text */
+  line-height: 24px;
+  transition: background-color 0.1s ease;
 }
 
-.menu-item.apple-logo {
-  font-size: 16px; /* Apple logo is usually a bit larger */
-  font-weight: 500;
-  margin-right: 5px;
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Subtle hover effect */
+}
+
+.menu-item.apple-logo::before {
+  content: "\f8ff"; /* Apple logo character */
+  font-family: -apple-system, BlinkMacSystemFont;
+  font-size: 16px;
 }
 
 .menu-item.app-name {
-  font-weight: 600; /* Active app name is bold */
+  font-weight: 600; /* Bold for active app */
 }
 
 .menu-bar-right .menu-item {
-  margin-left: 10px;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
 }
 
 .status-icon {
-  font-size: 14px; /* Adjust icon size as needed */
+  font-size: 14px;
+  opacity: 0.8;
 }
 
 .date-time {
-  letter-spacing: 0.5px;
+  font-size: 12px;
 }
 
